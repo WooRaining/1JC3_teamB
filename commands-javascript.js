@@ -44,18 +44,15 @@ navLinks.forEach(function(link) {
     });
 });
 
-var currentPage = 0; // 当前页码
+var currentPage = 0;
 
 function changeContent(page) {
 var container = document.getElementById('content-container');
-// 淡出效果
 container.style.opacity = 0;
 setTimeout(function() {
-    // 更新内容
     container.innerHTML = pages[page];
-    // 淡入效果
     container.style.opacity = 1;
-}, 500); // 设置一个延时，确保淡出效果完成
+}, 500);
 }
 
 document.getElementById('prevPage').addEventListener('click', function() {
