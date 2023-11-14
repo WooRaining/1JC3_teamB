@@ -5,8 +5,8 @@ p, baozi, vincent, mike, mason
 
 
 
-1. Introducation to Github-------Peter
-2. Setup a Github repository-----
+1. Introducation to Github-------Baozi
+2. Setup a Github repository-----Peter
 3. Git clone---------------------
 4. Git add-----------------------
 5. Git commit--------------------
