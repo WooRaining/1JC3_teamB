@@ -1,0 +1,227 @@
+:root {
+    --header-footer-bg-color: #24292e;
+    --header-footer-text-color: #ffffff;
+    --nav-bg-color: #36454F;
+    --nav-hover-bg-color: #0366d6;
+    --link-color: #ffffff;
+    --text-color: #586069;
+    --bg-color: #3a4048;
+    --accent-bg-color: #5a9bd5;
+    --nav-ul-li-color: #020d19;
+    --nav-a-color: #000000;
+    --h1-color: #ffffff;
+    --h2-color: #24292e;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    line-height: 1.5;
+    margin: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    background: var(--header-footer-bg-color);
+    color: var(--header-footer-text-color);
+    padding: 1rem 0;
+}
+
+footer p {
+    text-align: center;
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+header h1{
+    text-align: center;
+    margin: 10;
+    color: var(--h1-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    border-radius: 75px;
+    background: var(--nav-bg-color);
+}
+
+nav ul li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+nav ul li:hover {
+    transform: scale(1.5);
+    z-index: 10;
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--nav-a-color);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--accent-bg-color);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--link-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+    transform-origin: bottom left;
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+}
+
+nav a:hover {
+    background: var(--nav-hover-bg-color);
+    color: var(--link-color);
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+main {
+    background: #c8d5e8;
+    padding: 2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+h2 {
+    color: var(--h2-color);
+    border-bottom: 1px solid var(--accent-bg-color);
+    padding-bottom: .3rem;
+}
+
+p {
+    background: none;
+    border-left: none;
+    padding: 0;
+    font-style: normal;
+    font-size: 18px;
+}
+
+p:before {
+    content: none;
+}
+
+@media (min-width: 768px) {
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+        color:#586069
+    }
+}
+
+#currentPageDisplay{
+    color: white;
+    margin: auto;
+}
+
+.blur-effect *:not(:hover) {
+    filter: blur(2px);
+}
+
+#prevPage, #nextPage {
+    margin: 10px;
+    background-color: #2d333b;
+    color: #e1d3d3;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
+}
+
+#prevPage:hover, #nextPage:hover {
+    background-color: #4b5562;
+}
+
+#content-container {
+    color: #ffffff;
+    transition: opacity 0.5s ease-in-out;
+    clear: both;
+    padding: 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    max-width: 960px;
+    margin: auto;
+}
+
+#content-container img {
+    max-width: 100%;
+    max-height: 480px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+#content-container p {
+    margin: 0 0 10px;
+}
+
+#content-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.page-navigation {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    padding: 20px 0;
+}
+
+#prevPage {
+    bottom: -300px;
+    left: 50px;
+}
+
+#nextPage {
+    bottom: -300px;
+    right: 50px;
+}
