@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Demonstration</title>
+    <link rel="stylesheet" href="commands-style.css">
+    <style>
+        .git-commit{
+            background: var(--nav-hover-bg-color);
+            color: var(--link-color);
+        }
+
+        #content-container p{
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GitHub Demo</h1>
+        <nav>
+            <ul>
+                <li><a href="git-clone.html">clone</a></li>
+                <li><a href="git-add.html">add</a></li>
+                <li><a class = "git-commit" href="git-commit.html">--commit--</a></li>
+                <li><a href="git-push.html">push</a></li>
+                <li><a href="git-commands.html">Back to Git-Commands</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <p id="currentPageDisplay">Current Page: 1</p>
+
+    <div class="page-navigation clearfix">
+        <button id="prevPage">Previous</button>
+        <button id="nextPage">Next</button>
+    </div>
+    
+    <div id="content-container">
+        <p>A GitHub commit captures repository changes, tracking project history and enabling collaboration and rollback.</p>
+        <img src = "images/git-commit/git-commit-1.png">
+    </div>
+
+    <script>
+        var pages = [
+        '<p>A GitHub commit captures repository changes, tracking project history and enabling collaboration and rollback.</p><img src = "images/git-commit/git-commit-1.png">',
+        '<p>Basic usage of GitHub commits</br></br></p><img src="images/git-commit/git-commit-2.png">',
+        '<p>Advanced operations for Git hub commits</br></br></p><img src="images/git-commit/git-commit-3.png">',
+        ];
+    </script>
+    <script src="commands-javascript.js"></script>
+
+    <footer>
+        <p>Github Command: Page "git-commit"</p>
+        <p>By github actions group B</p>
+    </footer>
+</body>
+</html>

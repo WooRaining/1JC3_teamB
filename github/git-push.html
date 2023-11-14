@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Demonstration</title>
+    <style>
+        .git-push{
+            background: var(--nav-hover-bg-color);
+            color: var(--link-color);
+        }
+        
+        #content-container p{
+            font-size:30px;
+        }
+    </style>
+    <link rel="stylesheet" href="commands-style.css">
+</head>
+<body>
+    <header>
+        <h1>GitHub Demo</h1>
+        <nav>
+            <ul>
+                <li><a href="git-clone.html">clone</a></li>
+                <li><a href="git-add.html">add</a></li>
+                <li><a href="git-commit.html">commit</a></li>
+                <li><a class = "git-push" href="git-push.html">--push--</a></li>
+                <li><a href="git-commands.html">Back to Git-Commands</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <p id="currentPageDisplay">Current Page: 1</p>
+
+    <div class="page-navigation clearfix">
+        <button id="prevPage">Previous</button>
+        <button id="nextPage">Next</button>
+    </div>
+    
+    <div id="content-container">
+        <p>Git Push uploads a local branch to a remote one and merges it into the remote repository.</br> After committing changes, use Git Push to complete the GitHub action.</p>
+        <img src="images/git-push/git-push-1.png">
+    </div>
+
+    <script>
+        var pages = [
+        '<p>Git Push uploads a local branch to a remote one and merges it into the remote repository.</br> After committing changes, use Git Push to complete the GitHub action.</p><img src="images/git-push/git-push-1.png">',
+        '<p>1."Git Push" command: </br></br></p><img src="images/git-push/git-push-2.png">',
+        '<p>2."--force" command, different local and remote</br></br></p><img src="images/git-push/git-push-3.png">',
+        '<p>3."--delete" command, deleting a branch from a host:</br></br></p><img src="images/git-push/git-push-4.png">',
+        '<p>4.Example:</br>*When we clone a project,</br>git will automatically name the remote host as "origin" for us</p><img src="images/git-push/git-push-5.png">',
+        '<p>Now returning to our GitHub repository,</br>we can see that the file has been pushed and we have done it!</p><img src="images/git-push/git-push-6.png">',
+        ];
+    </script>
+    <script src="commands-javascript.js"></script>
+    
+    <footer>
+        <p>Github Command: Page "git-push"</p>
+        <p>By github actions group B</p>
+    </footer>
+</body>
+</html>

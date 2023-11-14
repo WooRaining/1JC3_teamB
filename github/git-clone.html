@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Demonstration</title>
+    <link rel="stylesheet" href="commands-style.css">
+    <style>
+        .git-clone{
+            background: var(--nav-hover-bg-color);
+            color: var(--link-color);
+        }
+
+        #content-container p{
+            font-size:30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GitHub Demo</h1>
+        <nav>
+            <ul>
+                <li><a class = "git-clone" href="git-clone.html">--clone--</a></li>
+                <li><a href="git-add.html">add</a></li>
+                <li><a href="git-commit.html">commit</a></li>
+                <li><a href="git-push.html">push</a></li>
+                <li><a href="git-commands.html">Back to Git-Commands</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <p id="currentPageDisplay">Current Page: 1</p>
+
+    <div class="page-navigation clearfix">
+        <button id="prevPage">Previous</button>
+        <button id="nextPage">Next</button>
+    </div>
+    
+    <div id="content-container">
+        <p>Git Clone copies a project from a remote repository to a local one. <br> After setting up a GitHub repository, use Git Clone to store the code locally.</p>
+        <img src="images/git-clone/git-clone-1.png">
+    </div>
+    <script>
+        var pages = [
+        '<p>Git Clone copies a project from a remote repository to a local one. </br> After setting up a GitHub repository, use Git Clone to store the code locally. </p><img src="images/git-clone/git-clone-1.png">',
+        '<p>Step1: Install Git.</p><img src="images/git-clone/git-clone-2.png">',
+        '<p>Step2: Create a folder for placing the clone.</p><img src="images/git-clone/git-clone-3.png">',
+        '<p>Step3: Clone from GitHub (or other Code Cloud).</p><img src="images/git-clone/git-clone-4.png">',
+        '<p>Step4: Right-click in folder.</p><img src="images/git-clone/git-clone-5.png">',
+        '<p>Step5: Paste the address in the command.</p><img src="images/git-clone/git-clone-6.png">',
+        '<p>Now that you have cloned your cloud code locally, you can do a git add next!</p><img src="images/git-clone/git-clone-7.png">',
+        ];
+    </script>
+    <script src="commands-javascript.js"></script>
+
+    <footer>
+        <p>Github Command: Page "git-clone"</p>
+        <p>By github actions group B</p>
+    </footer>
+</body>
+</html>

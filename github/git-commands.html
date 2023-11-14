@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Demonstration</title>
+    <style>
+        #git-commands {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        #git-commands ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        #git-commands a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #2d333b;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            height: auto;
+            margin: 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        #git-commands a::after {
+            height: 3px; 
+        }
+
+        #command-info {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -100px; 
+            width: 300px; 
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        #git-commands a:hover, #git-commands a:focus {
+            background-color: var(--git-link-bg-color);
+            color: var(--git-link-color);
+            transform: scale(1.05);
+        }
+
+        @media (min-width: 768px) {
+            #git-commands ul {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        #git-commands li:hover #command-info,
+        #git-commands li:focus #command-info {
+            display: block;
+        }
+
+        .command{
+            background: var(--nav-hover-bg-color);
+            color: var(--link-color);
+        }
+        
+        #command-info img {
+            max-width: 100%;
+            max-height: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #command-info p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        #command-info {
+            width: 300px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+    </style>
+    <link rel="stylesheet" href="mainpages-style.css">
+</head>
+<body>
+    <header>
+        <h1>GitHub Demo</h1>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Homepage</a></li>
+                <li><a href="introduction.html">Introduction</a></li>
+                <li><a href="setup-repo.html">Setup Repository</a></li>
+                <li><a class = "command" href="git-commands.html">--Git Commands--</a></li>
+                <li><a href="github-actions.html">GitHub Actions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="git-commands">
+                <h2>Git Commands</h2>
+                <nav>
+                    <ul>
+                        <li><a href="git-clone.html">git-clone</a></li>
+                        <li><a href="git-add.html">git-add</a></li>
+                        <li><a href="git-commit.html">git-commit</a></li>
+                        <li><a href="git-push.html">git-push</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </main>
+    </div>
+
+    <div id="command-info"></div>
+
+    <script>
+        // 图片和描述的详细信息
+        const commandDetails = {
+            'git-clone.html': {
+                img: 'images/git-commands/git-commands-3.png',
+                desc: 'The "git-clone"used to copy a project from a remote repository to a local one.'
+            },
+            'git-add.html': {
+                img: 'images/git-commands/git-commands-1.png',
+                desc: 'The "git-add" command tracks new and modified files in Git, staging them for the next commit.'
+            },
+            'git-commit.html': {
+                img: 'images/git-commit/git-commit-1.png',
+                desc: 'The "git-commit" captures repository changes, tracking project history and enabling collaboration and rollback.'
+            },
+            'git-push.html': {
+                img: 'images/git-commands/git-commands-2.png',
+                desc: 'The "git-push" is used to upload a local branch to a remote branch and merge it into the remote host.'
+            }
+        };
+    
+        function applyBlur() {
+            document.querySelector('.container').classList.add('blur-effect');
+            document.querySelector('footer').classList.add('blur-effect');
+            document.querySelector('header').classList.add('blur-effect');
+        }
+    
+        function removeBlur() {
+            document.querySelectorAll('.blur-effect').forEach(element => {
+                element.classList.remove('blur-effect');
+            });
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            const gitCommands = document.querySelectorAll('#git-commands a');
+            const commandInfo = document.getElementById('command-info');
+    
+            navLinks.forEach(link => {
+                link.addEventListener('mouseenter', applyBlur);
+                link.addEventListener('mouseleave', removeBlur);
+            });
+    
+            gitCommands.forEach(command => {
+                command.addEventListener('mouseenter', function() {
+                    const commandName = command.getAttribute('href');
+                    removeBlur();
+                    if (commandDetails[commandName]) {
+                        const details = commandDetails[commandName];
+                        commandInfo.innerHTML = `
+                            <img src="${details.img}" alt="${commandName}">
+                            <p>${details.desc}</p>
+                        `;
+                        commandInfo.style.display = 'block';
+                        commandInfo.style.top = `${command.getBoundingClientRect().bottom}px`;
+                        commandInfo.style.left = `${command.getBoundingClientRect().left}px`;
+                    }
+                });
+    
+                command.addEventListener('mouseleave', function() {
+                    commandInfo.style.display = 'none';
+                    commandInfo.innerHTML = '';
+                });
+            });
+    
+            commandInfo.addEventListener('mouseenter', function() {
+                applyBlur();
+            });
+    
+            commandInfo.addEventListener('mouseleave', function() {
+                removeBlur();
+            });
+        });
+    </script>
+
+    <footer>
+        <p>Git-Commands Page</p>
+        <p>By github actions group B</p>
+    </footer>
+</body>
+</html>

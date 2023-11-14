@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Demonstration</title>
+    <link rel="stylesheet" href="commands-style.css">
+    <style>
+        .git-add{
+            background: var(--nav-hover-bg-color);
+            color: var(--link-color);
+        }
+
+        #content-container p{
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GitHub Demo</h1>
+        <nav>
+            <ul>
+                <li><a href="git-clone.html">clone</a></li>
+                <li><a class = "git-add" href="git-add.html">--add--</a></li>
+                <li><a href="git-commit.html">commit</a></li>
+                <li><a href="git-push.html">push</a></li>
+                <li><a href="git-commands.html">Back to Git-Commands</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <p id="currentPageDisplay">Current Page: 1</p>
+
+    <div class="page-navigation">
+        <button id="prevPage">Previous</button>
+        <button id="nextPage">Next</button>
+    </div>
+    
+    <div id="content-container">
+        <p>In Git, the staging area or index is a buffer between the working directory and repository, allowing selective preparation and review of changes before committing.</p>
+        <img src="images/git-add/git-add-1.png">
+    </div>
+    <script>
+        var pages = [
+        '<p>In Git, the staging area or index is a buffer between the working directory and repository, allowing selective preparation and review of changes before committing.</p><img src="images/git-add/git-add-1.png">',
+        '<p>1. Add specific files: "git add filename"</br></br>This command stages the changes in the specified file. Replace "filename" with the actual name of the file.</p><img src="images/git-add/git-add-2.png">',
+        '<p>2. Add all changes: "git add"</br></br>This command stages all changes in the current directory and its subdirectories, with the dot ("".") signifying the current directory. After execution, the changes are staged and ready for commit.</p><img src="images/git-add/git-add-3.png">',
+        '<p>3. Add changes in a Directory: "git add directoryname/"</br></br>Use this command to stage changes in a specific directory. Replace "directoryname" with the name of the directory.</p><img src="images/git-add/git-add-6.png">',
+        '<p>4. Add with Wildcards: "git add *.txt"</br></br>You can use wildcards to add files that match a specific pattern. This example stages all ".txt" files.</p><img src="images/git-add/git-add-5.png">',
+        '<p>5. Interactive Mode: "git add -i"</br></br>The interactive mode allows you to interactively choose which changes to stage. It provides a menu where you can select files or chunks of changes to add.</p><img src="images/git-add/git-add-4.png">',
+        '<p>6. Additonal steps: </br></br>Before adding changes, you might want to check the status of your repository to see which files have been modified or are untracked: Use the git add command followed by the name of the file you want to stage.</br>In this case, it is example.txt: Confirm that the changes are staged by checking the status again: The output should indicate that the file example.txt is now staged and ready to be committed.</p><img src="images/git-add/git-add-7.png">',
+        '<p>What was done behind the scene?</br></br></p><img src="images/git-add/git-add-8.png">',
+        ];
+    </script>
+    <script src="commands-javascript.js"></script>
+
+    <footer>
+        <p>Github Command: Page "git-clone"</p>
+        <p>By github actions group B</p>
+    </footer>
+</body>
+</html>
